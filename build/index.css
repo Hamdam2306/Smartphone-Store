@@ -520,7 +520,23 @@
     display: none !important;
   }
 }
-@layer utilities;
+@layer utilities {
+  .flex {
+    display: flex;
+  }
+  .h-60 {
+    height: calc(var(--spacing) * 60);
+  }
+  .w-60 {
+    width: calc(var(--spacing) * 60);
+  }
+  .content-between {
+    align-content: space-between;
+  }
+  .bg-amber-300 {
+    background-color: var(--color-amber-300);
+  }
+}
 @keyframes spin {
   to {
     transform: rotate(360deg);
