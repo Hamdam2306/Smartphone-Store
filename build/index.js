@@ -949,9 +949,15 @@ var products = [
 
 // src/elements.ts
 var list = document.querySelector("#phone");
+var body = document.querySelector("body");
 
 // src/hero.ts
 console.log("Hello from hero.ts");
+window.addEventListener("load", () => {
+  const title = document.createElement("h1");
+  title.innerText = "our products";
+  body?.appendChild(title);
+});
 
 // src/index.ts
 console.log(products);
