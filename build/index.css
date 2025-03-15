@@ -639,6 +639,35 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+  .bg-black {
+    background-color: var(--color-black);
+  }
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-black {
+    color: var(--color-black);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
 }
 @keyframes spin {
   to {
