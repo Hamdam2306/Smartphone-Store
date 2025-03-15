@@ -2,6 +2,7 @@ import { products } from "../public/db";
 import { list } from "./elements";
 
 import "./hero";
+import "./detail";
 
 // console.log(products);
 
