@@ -1,3 +1,4 @@
+import { indexOfLine } from "bun";
 import { products } from "../public/db";
 import { body, productCrad } from "./elements";
 
@@ -27,5 +28,10 @@ products.forEach((product) => {
 <p class="text-indigo-600 text-xl font-semibold">&pound: ${product.price}</p>
 </div>
 `;
+card.addEventListener('click',(e)=>{
+    console.log(product.id)
+    window.location.href = `./detail.html?id=${product.id}`
+    
+})
   productCrad?.appendChild(card);
 });

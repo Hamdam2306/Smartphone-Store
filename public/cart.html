@@ -1,74 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../build/index.css">
-</head>
-<body class="bg-white font-sans m-0">
-    
+    <link rel="stylesheet" href="../build/index.css" />
+  </head>
+  <body class="bg-white font-sans m-0">
     <!-- Navbar -->
-    <nav class="bg-[#2a2a72] p-4 flex` justify-between items-center">
-        <div class="flex items-center gap-10">
-            <img src="./images/download.png" alt="Logo" class="w-24 h-24 cursor-pointer">
-            <a href="#" class="text-white text-xl uppercase tracking-wider">PRODUCTS</a>
-        </div>
-        <button class="text-xl uppercase border border-[#009ffd] text-[#009ffd] rounded-lg px-3 py-1 transition duration-500 hover:bg-[#009ffd] hover:text-[#2a2a72]">
-            MY CART
-        </button>
+    <nav class="bg-[#2a2a72] p-4 flex justify-between items-center">
+      <div class="flex items-center gap-10">
+        <img
+          src="./images/logo.png"
+          alt="Logo"
+          class="w-24 h-24 cursor-pointer"
+        />
+        <a href="#" class="text-white text-xl uppercase tracking-wider"
+          >PRODUCTS</a
+        >
+      </div>
+      <button
+        class="text-xl uppercase border border-[#009ffd] text-[#009ffd] rounded-lg px-3 py-1 transition duration-500 hover:bg-[#009ffd] hover:text-[#2a2a72]"
+      >
+        MY CART
+      </button>
     </nav>
-    
+
     <!-- Cart Section -->
     <section class="flex flex-col items-center my-10">
-        <h1 class="font-bold text-4xl font-oswald">
-            YOU <span class="text-[#2a2a72]">CART</span>
-        </h1>
-        <div class="grid grid-cols-6 gap-30 mt-10 text-center">
-            <div class="flex flex-col items-center">
-                <h2 class="text-lg font-semibold">products</h2>
-                <img src="./images/product-1.png" alt="Product" class="w-24 h-24">
-            </div>
-            <div class="flex flex-col items-center">
-                <h2 class="text-lg font-semibold">name of product</h2>
-                <p>Google Pixel - Black</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <h2 class="text-lg font-semibold">price</h2>
-                <p>£10</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <h2 class="text-lg font-semibold">quantity</h2>
-                <div class="flex gap-3 mt-3">
-                    <button class="border-2 border-black px-3 py-1 transition duration-500 hover:bg-black hover:text-white">-</button>
-                    <button class="border-2 border-black px-3 py-1  transition duration-500 hover:bg-black hover:text-white">1</button>
-                    <button class="border-2 border-black px-3 py-1 transition duration-500 hover:bg-black hover:text-white">+</button>
-                </div>
-            </div>
-            <div class="flex flex-col items-center">
-                <h2 class="text-lg font-semibold">remove</h2>
-                <p></p>
-            </div>
-            <div class="flex flex-col items-center">
-                <h2 class="text-lg font-semibold">total</h2>
-                <p>item total: £10</p>
-            </div>
+      <h1 class="font-bold text-4xl font-oswald">
+        YOUR <span class="text-[#2a2a72]">CART</span>
+      </h1>
+      <div class="grid grid-cols-6 gap-30 mt-10 text-center">
+        <div class="flex flex-col items-center">
+          <h2 class="text-lg font-semibold">products</h2>
+          <img src="./images/product-1.png" alt="Product" class="w-24 h-24" />
         </div>
+        <div class="flex flex-col items-center">
+          <h2 class="text-lg font-semibold">name of product</h2>
+          <p>Google Pixel - Black</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <h2 class="text-lg font-semibold">price</h2>
+          <p>£10</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <h2 class="text-lg font-semibold">quantity</h2>
+          <div class="flex gap-3 mt-3">
+            <button
+              class="border-2 border-black px-3 py-1 transition duration-500 hover:bg-black hover:text-white"
+            >
+              -
+            </button>
+            <button
+              class="border-2 border-black px-3 py-1 transition duration-500 hover:bg-black hover:text-white"
+            >
+              1
+            </button>
+            <button
+              class="border-2 border-black px-3 py-1 transition duration-500 hover:bg-black hover:text-white"
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-col items-center">
+          <h2 class="text-lg font-semibold">remove</h2>
+          <p></p>
+        </div>
+        <div class="flex flex-col items-center">
+          <h2 class="text-lg font-semibold">total</h2>
+          <p>item total: £10</p>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="text-center mt-10 ml-200">
-        <button class="border border-red-500 text-red-500 bg-white w-52 h-10 rounded-lg transition duration-500 hover:bg-red-500 hover:text-white">
-            CLEAR CART
-        </button>
-        <p class="text-lg mt-3 mb-3">subtotal: £10</p>
-        <p class="text-lg mb-3">tax: £2</p>
-        <p class="text-lg mb-3">Total: £12</p>
-        <div class="flex flex-col items-center">
-            <img src="./images/images (1).png" alt="Footer Logo" class="w-20 h-5 cursor-pointer">
-            <p>Shop now. Pay over time.</p>
-        </div>
+      <button
+        class="border border-red-500 text-red-500 bg-white w-52 h-10 rounded-lg transition duration-500 hover:bg-red-500 hover:text-white"
+      >
+        CLEAR CART
+      </button>
+      <p class="text-lg mt-3 mb-3">subtotal: £10</p>
+      <p class="text-lg mb-3">tax: £2</p>
+      <p class="text-lg mb-3">Total: £12</p>
+      <div class="flex flex-col items-center">
+        <img
+          src="./images/images (1).png"
+          alt="Footer Logo"
+          class="w-20 h-5 cursor-pointer"
+        />
+        <p>Shop now. Pay over time.</p>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>

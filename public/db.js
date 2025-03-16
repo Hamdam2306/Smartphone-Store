@@ -977,3 +977,7 @@ export const products = [
       "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20X21/thumbnail.png",
   },
 ];
+
+export const cart = [
+  
+]
