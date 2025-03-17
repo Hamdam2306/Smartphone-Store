@@ -15,6 +15,7 @@ console.log("Hello from hero.ts");
 //    body?.appendChild(title)
 // })
 
+
 products.forEach((product) => {
   const card = document.createElement("div");
   card.innerHTML = `

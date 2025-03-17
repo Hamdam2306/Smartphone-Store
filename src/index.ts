@@ -3,6 +3,7 @@ import { list } from "./elements";
 
 import "./hero";
 import "./detail";
+import "./cart";
 
 // console.log(products);
 

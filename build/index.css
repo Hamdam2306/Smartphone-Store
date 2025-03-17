@@ -575,6 +575,9 @@
   .grid {
     display: grid;
   }
+  .hidden {
+    display: none;
+  }
   .inline-flex {
     display: inline-flex;
   }
@@ -868,16 +871,6 @@
     --tw-duration: 500ms;
     transition-duration: 500ms;
   }
-  .hover\:scale-110 {
-    &:hover {
-      @media (hover: hover) {
-        --tw-scale-x: 110%;
-        --tw-scale-y: 110%;
-        --tw-scale-z: 110%;
-        scale: var(--tw-scale-x) var(--tw-scale-y);
-      }
-    }
-  }
   .hover\:bg-\[\#009ffd\] {
     &:hover {
       @media (hover: hover) {
@@ -1156,19 +1149,4 @@
 @property --tw-duration {
   syntax: "*";
   inherits: false;
-}
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
 }
