@@ -946,6 +946,7 @@ var products = [
     thumbnail: "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20X21/thumbnail.png"
   }
 ];
+var cart = [];
 
 // src/elements.ts
 var list = document.querySelector("#phone");
@@ -953,7 +954,7 @@ var body = document.querySelector("body");
 var main = document.querySelector("#main");
 var productCrad = document.querySelector("#products");
 var productTitle = document.querySelector("#productTitle");
-var addToCart = document.getElementById("addCart");
+var addCartButton = document.querySelector(".addCart");
 
 // src/hero.ts
 console.log("Hello from hero.ts");
@@ -977,33 +978,110 @@ products.forEach((product) => {
   productCrad?.appendChild(card);
 });
 
+// src/cart.ts
+var footer = document.querySelector("footer");
+function renderCart() {
+  footer?.classList.remove("hidden");
+  console.log("hdabnk");
+  const cartSection = document.querySelector("#cartSection");
+  cart.forEach((cartProduct) => {
+    console.log(cartProduct);
+    const fragment = document.createElement("div");
+    fragment.innerHTML = `
+        <div class="grid grid-cols-6 gap-30 mt-10 text-center">
+        <div class="flex flex-col items-center">
+        <h2 class="text-lg font-semibold">products</h2>
+        <img src="${cartProduct?.images[0]}" alt="Product" class="w-24 h-24" />
+        </div>
+        <div class="flex flex-col items-center">
+        <h2 class="text-lg font-semibold">name of product</h2>
+        <p>${cartProduct?.title}</p>
+        </div>
+        <div class="flex flex-col items-center">
+      <h2 class="text-lg font-semibold">price</h2>
+      <p>£${cartProduct.price}</p>
+    </div>
+    <div class="flex flex-col items-center">
+    <h2 class="text-lg font-semibold">quantity</h2>
+    <div class="flex gap-3 mt-3">
+    <button
+    class="border-2 border-black px-3 py-1 transition duration-500 hover:bg-black hover:text-white"
+    >
+    -
+    </button>
+    <button
+    class="border-2 border-black px-3 py-1 transition duration-500 hover:bg-black hover:text-white"
+    >
+    1
+    </button>
+    <button
+    class="border-2 border-black px-3 py-1 transition duration-500 hover:bg-black hover:text-white"
+    >
+    +
+    </button>
+    </div>
+    </div>
+    <div class="flex flex-col items-center">
+    <h2 class="text-lg font-semibold">remove</h2>
+    <p></p>
+    </div>
+    <div class="flex flex-col items-center">
+    <h2 class="text-lg font-semibold">total</h2>
+    <p>item total: £${cartProduct.price}</p>
+    </div>
+    </div> `;
+    console.log(fragment);
+    cartSection?.appendChild(fragment);
+  });
+}
+
 // src/detail.ts
+var myCart = document.querySelector(".myCart");
 var searchParams = new URLSearchParams(location.search);
 var id = searchParams.get("id");
-console.log();
 var product = products.find((product2) => product2.id === +id);
+function addCart() {
+  if (product) {
+    cart.push(product);
+    console.log(cart);
+    addCartButton.textContent = "Added";
+    addCartButton.disabled = true;
+  }
+}
 window.addEventListener("load", () => {
+  footer?.classList.add("hidden");
   productTitle.innerText = product?.title ?? "";
   main.innerHTML = ` 
   <div>
-  <img class="w-[250px]" src="${product?.images[0]}" alt="" />
-</div>
-<div class="flex flex-col gap-4">
-  <div class="text-2xl">model: ${product?.title}</div>
-  <div class="text-2xl font-bold">made by : ${product?.brand}</div>
-  <div class="text-3xl text-cyan-950">Price: £${product?.price}</div>
-  <div class="text-xl font-bold">some info about product:</div>
-  <div class="max-w-[400px] text-[20px]">${product?.description}</div>
-  <div>
-    <button
-      class="w-[200px] h-[40px] border-2 rounded-2xl border-b-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer"
-    >
-      BACK TO PRODUCTS
-    </button>
-    <button id="addCart" onclick="addCart()" class="w-[200px] h-[40px] border rounded-xl cursor-pointer border-amber-500 hover:bg-amber-500 hover:text-white">
-      ADD TO CARD
-    </button>
+    <img class="w-[250px]" src="${product?.images[2]}" alt="" />
   </div>
-</div>
-        `;
+  <div class="flex flex-col gap-4">
+    <div class="text-2xl">model: ${product?.title}</div>
+    <div class="text-2xl font-bold">made by : ${product?.brand}</div>
+    <div class="text-3xl text-cyan-950">Price: £${product?.price}</div>
+    <div class="text-xl font-bold">some info about product:</div>
+    <div class="max-w-[400px] text-[20px]">${product?.description}</div>
+    <div>
+      <button class="backToProduct w-[200px] h-[40px] border-2 rounded-2xl border-b-blue-900 hover:bg-blue-900 hover:text-white cursor-pointer">
+        BACK TO PRODUCTS
+      </button>
+      <button class="addCart w-[200px] h-[40px] border rounded-xl cursor-pointer border-amber-500 hover:bg-amber-500 hover:text-white">
+        ADD TO CART
+      </button>
+    </div>
+  </div>`;
+  const addCartButton2 = document.querySelector(".addCart");
+  if (addCartButton2) {
+    addCartButton2.addEventListener("click", addCart);
+  } else {
+    console.error("addCart button not found!");
+  }
+  const backToProduct = document.querySelector(".backToProduct");
+  backToProduct?.addEventListener("click", () => {
+    window.location.href = "./index.html";
+  });
+  myCart?.addEventListener("click", () => {
+    main.innerHTML = "";
+    renderCart();
+  });
 });
